@@ -4,20 +4,59 @@
 		<meta charset="UTF-8"> 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<style>
+			.maindiv{
+				display:flex;
+				justify-content:space-between;
+				width:100%;
+			}
+		</style>
 	</head>
 	<body>
 		<script>
 			let product=[
 			{
 				Name:"Car",
-				Prant:"BMW"
-				price:1crose
+				brand:"BMW",
+				image:"bmw.png",
+				price:1000000
 			},
 			{
-				Name:"Cosmetics"
+				Name:"Cosmetics",
+				brand:"Dazller",
+				image:"dazller.jpg",
+				price:500
+				
+			},
+			{
+				Name:"Refrigerator",
+				brand:"Whirlpool",
+				image:"bridge.png",
+				price:20000
 				
 			}
 			]
+			
+			let main=document.createElement("div");
+			document.body.appendChild(main);
+			main.setAttribute("class","maindiv");
+			
+			product.forEach((obj)=>{
+				let productbox=document.createElement("div");
+				main.appendChild(productbox);
+				productbox.setAttribute("class","childdiv");
+				
+				
+				let productpic=document.createElement("div");
+				productbox.appendChild(productpic);
+				productpic.setAttribute("class","imgdiv");
+				
+				let img=document.createElement("img");
+				productpic.appendChild(img);
+				img.src=obj.image;
+				img.style.width="100%"
+				<!-- img.style.height="40vh" -->
+			})
 		</script>
 	</body>
  </html>
